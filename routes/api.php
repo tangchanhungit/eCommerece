@@ -11,9 +11,9 @@ Route::middleware([StoreRequest::class])->group(function(){
     Route::controller(UserController::class)->group(function(){
         Route::get('/users','index');
         Route::prefix('/user')->group(function(){
-            Route::post('/',  'create');
+            Route::post('/','create');
             Route::get('/{id}','show');
-            Route::put('/{id}',  'update');
+            Route::put('/{id}','update');
             Route::delete('/{id}','destroy');
         });
     });
@@ -23,7 +23,7 @@ Route::middleware([StoreRequest::class])->group(function(){
         Route::prefix("/product")->group(function(){
             Route::post('/ ','create');
             Route::get('/{id}','show');
-            Route::put('/{id}', 'update');
+            Route::put('/{id}','update');
             Route::delete('/{id}','destroy');
         });
     });
@@ -33,7 +33,7 @@ Route::middleware([StoreRequest::class])->group(function(){
         Route::prefix("/order")->group(function(){
             Route::post('/ ','create');
             Route::get('/{id}','show');
-            Route::put('/{id}', 'update');
+            Route::put('/{id}','update');
             Route::delete('/{id}','destroy');
         });
     });
