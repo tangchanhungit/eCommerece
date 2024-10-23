@@ -4,14 +4,12 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Middleware\ProductHandleRequests;
 use App\Http\Middleware\StoreRequest;
-use App\Http\Middleware\UserHandleRequests;
 
 Route::middleware([StoreRequest::class])->group(function(){
 
     Route::controller(UserController::class)->group(function(){
-        Route::get('users','index');
+        Route::get('/users','index');
         Route::prefix('/user')->group(function(){
             Route::post('/',  'create');
             Route::get('/{id}','show');
@@ -19,11 +17,9 @@ Route::middleware([StoreRequest::class])->group(function(){
             Route::delete('/{id}','destroy');
         });
     });
-   
-
 
     Route::controller(ProductController::class)->group(function(){
-        Route::get('products','index');
+        Route::get('/products','index');
         Route::prefix("/product")->group(function(){
             Route::post('/ ','create');
             Route::get('/{id}','show');
@@ -33,7 +29,7 @@ Route::middleware([StoreRequest::class])->group(function(){
     });
 
     Route::controller(OrderController::class)->group(function(){
-        Route::get('orders','index');
+        Route::get('/orders','index');
         Route::prefix("/order")->group(function(){
             Route::post('/ ','create');
             Route::get('/{id}','show');
