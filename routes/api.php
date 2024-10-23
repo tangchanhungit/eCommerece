@@ -4,9 +4,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Middleware\StoreRequest;
+use App\Http\Middleware\HandleStoreRequest;
 
-Route::middleware([StoreRequest::class])->group(function(){
+Route::middleware([HandleStoreRequest::class])->group(function(){
 
     Route::controller(UserController::class)->group(function(){
         Route::get('/users','index');
