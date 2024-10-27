@@ -8,5 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    return Inertia::render('UserList');
+    return Inertia::render('Users');
 });
