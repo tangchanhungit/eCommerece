@@ -56,4 +56,10 @@ class User extends Authenticatable
     public function payments(): HasManyThrough{
         return $this->hasManyThrough(Payment::class, Order::class);
     }
+
+    // Add this method to the User model
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user'); // Adjust table name if necessary
+    }
 }

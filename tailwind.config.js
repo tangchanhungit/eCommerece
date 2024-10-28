@@ -4,8 +4,8 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
     content: [
         "./resources/**/*.blade.php",
-        "./resources/**/*.js",
         "./resources/**/*.jsx ",
+        "./resources/**/**/*.jsx ",
       ],
     theme: {
         extend: {

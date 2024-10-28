@@ -10,9 +10,9 @@ const Users = () => {
         try {
             const response = await getUsers();
             setUsers(response.data);
-            setLoading(false);
         } catch (error) {
-            console.error('Error fetching users:', error);
+            alert('Error fetching users. Please try again later.');
+        } finally{
             setLoading(false);
         }
     };
@@ -29,7 +29,7 @@ const Users = () => {
         <div>
             <h2>User List</h2>
             {users.length === 0 ? (
-                <p>No users found.</p>
+                <p>No users found or there might be an issue fetching data</p>
             ) : (
                 <ul>
                     {users.map((user) => (
