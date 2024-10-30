@@ -3,7 +3,7 @@ import { getUser } from '../Api';
 import AdminLayout from '../Layouts/AdminLayout';
 
 export default function Home ({userId}) {
-  const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
     
     useEffect(() => {
